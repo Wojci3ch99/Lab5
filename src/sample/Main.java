@@ -64,7 +64,7 @@ public class Main extends Application {
         gc.fillRect(ARENAX1, ARENAY1, ARENAWIDTH, ARENAHEIGHT);
 
         if ((x <= ARENAX1) || ((x >= ARENAX2))) vx = -vx;
-        if ((x <= ARENAY1) || ((x >= ARENAY2))) vy = -vy;
+        if ((x <= ARENAY1) || ((y >= ARENAY2))) vy = -vy;
 
         x += vx;
         y += vy;
