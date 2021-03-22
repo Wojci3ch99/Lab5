@@ -16,6 +16,7 @@ import javafx.util.Duration;
 
 import java.awt.*;
 import java.sql.Time;
+import java.util.Random;
 
 public class Main extends Application {
 
@@ -49,6 +50,7 @@ public class Main extends Application {
 //        gc.setFill(Color.WHITESMOKE);
 //        gc.fillOval(ARENAX1+ARENAWIDTH/2, ARENAY1+ARENAHEIGHT/2, 2*R, 2*R);
         t.play();
+        initKula();
 
     }
 
@@ -58,13 +60,20 @@ public class Main extends Application {
     private double vx = 5;
     private double vy = 2;
 
+    private void initKula() {
+        Random lott = new Random();
+        x = lott.nextDouble()*ARENAWIDTH+ARENAX1;
+        y = lott.nextDouble()*ARENAHEIGHT+ARENAY1;
+        vx = 5+lott.nextDouble()*20;
+        vy = 5*lott.nextDouble()*20;
+    }
 
     private void run(GraphicsContext gc) {
         gc.setFill(Color.BLACK);
         gc.fillRect(ARENAX1, ARENAY1, ARENAWIDTH, ARENAHEIGHT);
 
         if ((x - R <= ARENAX1) || ((x + R >= ARENAX2))) vx = -vx;
-        if ((x - R <= ARENAY1) || ((y + R >= ARENAY2))) vy = -vy;
+        if ((y - R <= ARENAY1) || ((y + R >= ARENAY2))) vy = -vy;
 
         x += vx;
         y += vy;
