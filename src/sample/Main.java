@@ -53,13 +53,25 @@ public class Main extends Application {
     }
 
     private double x = ARENAX1+ARENAWIDTH/2;
+    private double y = ARENAY1+ARENAHEIGHT/2;
+
+    private double vx = 5;
+    private double vy = 2;
+
 
     private void run(GraphicsContext gc) {
         gc.setFill(Color.BLACK);
         gc.fillRect(ARENAX1, ARENAY1, ARENAWIDTH, ARENAHEIGHT);
 
+        if ((x <= ARENAX1) || ((x >= ARENAX2))) vx = -vx;
+        if ((x <= ARENAY1) || ((x >= ARENAY2))) vy = -vy;
+
+        x += vx;
+        y += vy;
+
         gc.setFill(Color.WHITESMOKE);
-        gc.fillOval(x += 5, ARENAY1+ARENAHEIGHT/2, 2*R, 2*R);
+        //gc.fillOval(x += 5, ARENAY1+ARENAHEIGHT/2, 2*R, 2*R);
+        gc.fillOval(x,y,2*R, 2*R);
     }
 
 
