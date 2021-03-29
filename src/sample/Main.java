@@ -51,6 +51,11 @@ public class Main extends Application {
 //        gc.fillOval(ARENAX1+ARENAWIDTH/2, ARENAY1+ARENAHEIGHT/2, 2*R, 2*R);
         t.play();
         initKula();
+        initKule();
+
+
+
+
 
     }
 
@@ -59,8 +64,12 @@ public class Main extends Application {
 //    private double[] y = new double[LICZBAKULEK];;
 //    private double[] vx = new double[LICZBAKULEK];;
 //    private double[] vy = new double[LICZBAKULEK];;
-    private Kulka[] kulki = new Kulka[LICZBAKULEK];
 
+    // -------------------------
+
+    private Kulka[] kulka = new Kulka[LICZBAKULEK];
+    private Kulka[] kulki = new Kulka[LICZBAKULEK];
+//
     private void initKula() {
         Random lott = new Random();
         for (int i = 0; i < LICZBAKULEK; i++)
@@ -72,6 +81,26 @@ public class Main extends Application {
                     Color.WHITESMOKE);
     }
 
+    private void initKule(){
+        Random lott = new Random();
+            for (int i = 0; i < LICZBAKULEK; i++){
+                kulki[i] = new Rugby(
+                        lott.nextDouble()*ARENAWIDTH+ARENAX1,
+                        lott.nextDouble()*ARENAHEIGHT+ARENAY1,
+                        5+lott.nextDouble()*20,
+                        5*lott.nextDouble()*20,
+                        10,
+                        15);
+
+//                kulki[i] = new Kulka(
+//                        lott.nextDouble()*ARENAWIDTH+ARENAX1,
+//                        lott.nextDouble()*ARENAHEIGHT+ARENAY1,
+//                        5+lott.nextDouble()*20,
+//                        5*lott.nextDouble()*20,
+//                        Color.WHITESMOKE);
+            }
+
+    }
     private void run(GraphicsContext gc) {
         gc.setFill(Color.BLACK);
         gc.fillRect(ARENAX1, ARENAY1, ARENAWIDTH, ARENAHEIGHT);

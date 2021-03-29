@@ -5,12 +5,18 @@ import javafx.scene.paint.Color;
 
 public class Kulka {
     private static final double R = 10;
-    private double ySpeed;
-    private double xSpeed;
-    private double xPos;
-    private double yPos;
-    private Color color;
-    private double radius;
+//    private double ySpeed;
+//    private double xSpeed;
+//    private double xPos;
+//    private double yPos;
+//    private Color color;
+//    private double radius;
+
+    protected double ySpeed;
+    protected double xSpeed;
+    protected double xPos;
+    protected double yPos;
+    protected Color color;
 
 
 
@@ -45,6 +51,7 @@ public class Kulka {
             ySpeed =- ySpeed;
         }
     }
+
 
     public void draw(GraphicsContext gc){
         gc.setFill(color);
