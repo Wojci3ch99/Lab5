@@ -90,6 +90,7 @@ public class Main extends Application {
                         5+lott.nextDouble()*20,
                         5*lott.nextDouble()*20,
                         10,
+                        25,
                         15);
 
 //                kulki[i] = new Kulka(
